@@ -26,7 +26,7 @@ TEXBIN="/usr/local/texlive/${TEXLIVE}/bin/${PLATFORM}"
 ./install-tl -q -profile texlive.profile -repository $REMOTE
 
 echo PATH=$PATH:$TEXBIN
-echo 'export PATH=$PATH':$TEXBIN >> ~/.bash_profile
+echo 'export PATH=$PATH:$TEXBIN' >> ~/.bash_profile
 $TEXBIN/tlmgr install tabulary latexmk ulem environ trimspaces titlesec \
                       varwidth framed threeparttable wrapfig upquote capt-of \
                       multirow eqparbox needspace fncychap enumitem tracklang \
