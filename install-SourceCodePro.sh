@@ -1,5 +1,6 @@
 #!/usr/bin/bash
-DEST=/usr/share/fonts/opentype
+DEST=${HOME}/.fonts
+#DEST=/usr/share/fonts/opentype
 REPO=https://github.com/adobe-fonts/source-code-pro.git
 BRANCH=release
 
