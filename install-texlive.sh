@@ -1,6 +1,7 @@
 #!/bin/bash
 
 REMOTE="http://mirror.ctan.org/systems/texlive/tlnet"
+TEXLIVE_INSTALL_PREFIX="${TEXLIVE_INSTALL_PREFIX:-/usr/local/texlive}"
 
 mkdir -p /tmp/install-texlive
 cd /tmp/install-texlive/
@@ -22,7 +23,7 @@ EOF
 
 PLATFORM=`./install-tl --print-platform`
 TEXLIVE=$(./install-tl --version | egrep -o "20..")
-TEXBIN="/usr/local/texlive/${TEXLIVE}/bin/${PLATFORM}"
+TEXBIN="${TEXLIVE_INSTALL_PREFIX}/${TEXLIVE}/bin/${PLATFORM}"
 ./install-tl -q -profile texlive.profile -repository $REMOTE
 
 echo PATH=$PATH:$TEXBIN
